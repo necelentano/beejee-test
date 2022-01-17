@@ -10,6 +10,8 @@
 - Продолжил осваивать UI библиотеку Ant Design;
 - **Нет мобильной верстки.**
 
+# [Heroku Live Demo](https://beejee-react-test-task.herokuapp.com/)
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
