@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Row, Col, Button, Typography } from 'antd';
+import { Row, Col, Button, Typography, notification } from 'antd';
 
 import { deleteToken, setUrl } from '../redux';
 
@@ -20,6 +20,9 @@ const Header = () => {
 
 	const onLogoutHandler = () => {
 		dispatch(deleteToken());
+		notification.success({
+			message: 'Goodbye, Admin!',
+		});
 		navigate('/');
 	};
 	return (
