@@ -47,7 +47,7 @@ const AdminTaskTable = () => {
 			task => task.id === editedTaskId
 		)[0];
 
-		if (originalTask?.text !== taskText) {
+		if (originalTask?.status === 1 || originalTask?.text !== taskText) {
 			setNewTaskStatus(1);
 			if (modalCheckboxValue) {
 				setNewTaskStatus(11);
