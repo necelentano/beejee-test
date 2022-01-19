@@ -238,6 +238,7 @@ const AdminTaskTable = () => {
 				visible={isModalVisible}
 				onOk={handleOk}
 				onCancel={handleCancel}
+				confirmLoading={isEditLoading}
 				okText='Edit'
 			>
 				<Space direction='vertical'>
