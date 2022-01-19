@@ -30,8 +30,14 @@ const Header = () => {
 			<Col
 				xl={{ span: 8 }}
 				lg={{ span: 8 }}
-				md={{ span: 20 }}
-				xs={{ span: 20 }}
+				md={{ span: 8, offset: 2 }}
+				sm={{ span: 8, offset: 2 }}
+				xs={{ span: 24 }}
+				style={{
+					display: 'flex',
+					flexDirection: 'row',
+					justifyContent: 'space-evenly',
+				}}
 			>
 				<Link to='/'>
 					<Title level={1} style={{ margin: '20px 0 20px 20px', fontSize: 24 }}>
@@ -40,14 +46,15 @@ const Header = () => {
 				</Link>
 			</Col>
 			<Col
-				xl={{ offset: 12, span: 4 }}
-				lg={{ span: 8 }}
-				md={{ span: 20 }}
-				xs={{ span: 20 }}
+				xl={{ span: 4, offset: 8 }}
+				lg={{ span: 4, offset: 8 }}
+				md={{ span: 6, offset: 8 }}
+				sm={{ span: 8, offset: 6 }}
+				xs={{ span: 24 }}
 				style={{
 					display: 'flex',
 					flexDirection: 'row',
-					justifyContent: 'space-around',
+					justifyContent: 'space-evenly',
 				}}
 			>
 				{!isAuthenticated && location.pathname === '/' && (

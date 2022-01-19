@@ -44,21 +44,77 @@ const LoginForm = () => {
 		console.log('errorFields ==>', errorFields);
 	};
 
+	const formItemLayout = {
+		labelCol: {
+			xs: {
+				span: 24,
+			},
+			sm: {
+				span: 24,
+			},
+			md: {
+				span: 12,
+				offset: 6,
+			},
+			lg: {
+				span: 12,
+				offset: 6,
+			},
+		},
+		wrapperCol: {
+			xs: {
+				span: 24,
+			},
+			sm: {
+				span: 24,
+			},
+			md: {
+				span: 16,
+				offset: 4,
+			},
+			lg: {
+				span: 16,
+				offset: 4,
+			},
+		},
+	};
+	const tailFormItemLayout = {
+		wrapperCol: {
+			xs: {
+				span: 24,
+				offset: 0,
+			},
+			sm: {
+				span: 24,
+				offset: 0,
+			},
+			md: {
+				span: 12,
+				offset: 6,
+			},
+			lg: {
+				span: 12,
+				offset: 6,
+			},
+		},
+	};
+
 	return (
 		<Form
 			name='login'
-			labelCol={{ span: 8 }}
-			wrapperCol={{ span: 8 }}
+			{...formItemLayout}
 			initialValues={{ remember: true }}
 			onFinish={onFinish}
 			onFinishFailed={onFinishFailed}
 			autoComplete='off'
 			form={form}
+			layout='vertical'
 		>
 			<Form.Item
 				label='Username'
 				name='username'
 				rules={[{ required: true, message: 'Please input your username!' }]}
+				{...tailFormItemLayout}
 			>
 				<Input />
 			</Form.Item>
@@ -67,11 +123,12 @@ const LoginForm = () => {
 				label='Password'
 				name='password'
 				rules={[{ required: true, message: 'Please input your password!' }]}
+				{...tailFormItemLayout}
 			>
 				<Input.Password />
 			</Form.Item>
 
-			<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+			<Form.Item {...tailFormItemLayout}>
 				<Button type='primary' htmlType='submit' loading={isLoading}>
 					Login
 				</Button>

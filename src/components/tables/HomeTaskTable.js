@@ -21,6 +21,7 @@ const HomeTaskTable = () => {
 			sorter: true,
 			key: 'username',
 			width: '20%',
+			fixed: 'left',
 		},
 		{
 			title: 'Email',
@@ -114,6 +115,8 @@ const HomeTaskTable = () => {
 			}}
 			loading={isLoading}
 			onChange={handleTableChange}
+			scroll={{ x: true }}
+			style={{ marginBottom: 40 }}
 		/>
 	);
 };

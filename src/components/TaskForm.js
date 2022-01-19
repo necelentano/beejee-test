@@ -8,12 +8,58 @@ const TaskForm = () => {
 	const [addTask, { isLoading }] = useAddTaskMutation();
 	const [form] = Form.useForm();
 
-	const layout = {
+	const formItemLayout = {
 		labelCol: {
-			span: 8,
+			xs: {
+				span: 24,
+			},
+			sm: {
+				span: 24,
+			},
+			md: {
+				span: 12,
+				offset: 6,
+			},
+			lg: {
+				span: 12,
+				offset: 6,
+			},
 		},
 		wrapperCol: {
-			span: 8,
+			xs: {
+				span: 24,
+			},
+			sm: {
+				span: 24,
+			},
+			md: {
+				span: 16,
+				offset: 4,
+			},
+			lg: {
+				span: 16,
+				offset: 4,
+			},
+		},
+	};
+	const tailFormItemLayout = {
+		wrapperCol: {
+			xs: {
+				span: 24,
+				offset: 0,
+			},
+			sm: {
+				span: 24,
+				offset: 0,
+			},
+			md: {
+				span: 12,
+				offset: 6,
+			},
+			lg: {
+				span: 12,
+				offset: 6,
+			},
 		},
 	};
 
@@ -38,13 +84,15 @@ const TaskForm = () => {
 
 	return (
 		<Form
-			{...layout}
+			{...formItemLayout}
 			name='task-form'
 			onFinish={onFinish}
 			onFinishFailed={onFinishFailed}
 			form={form}
+			layout='vertical'
 		>
 			<Form.Item
+				{...tailFormItemLayout}
 				name='name'
 				label='Name'
 				rules={[
@@ -57,6 +105,7 @@ const TaskForm = () => {
 				<Input />
 			</Form.Item>
 			<Form.Item
+				{...tailFormItemLayout}
 				name='email'
 				label='Email'
 				rules={[
@@ -71,6 +120,7 @@ const TaskForm = () => {
 			</Form.Item>
 
 			<Form.Item
+				{...tailFormItemLayout}
 				name='description'
 				label='Description'
 				rules={[
@@ -82,7 +132,7 @@ const TaskForm = () => {
 			>
 				<Input.TextArea />
 			</Form.Item>
-			<Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+			<Form.Item {...tailFormItemLayout}>
 				<Button type='primary' htmlType='submit' loading={isLoading}>
 					Save task
 				</Button>

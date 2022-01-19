@@ -70,6 +70,7 @@ const AdminTaskTable = () => {
 			sorter: true,
 			key: 'username',
 			width: '20%',
+			fixed: 'left',
 		},
 		{
 			title: 'Email',
@@ -232,6 +233,7 @@ const AdminTaskTable = () => {
 				}}
 				loading={isLoading || isEditLoading}
 				onChange={handleTableChange}
+				scroll={{ x: true }}
 			/>
 			<Modal
 				title='Edit task'
@@ -241,11 +243,10 @@ const AdminTaskTable = () => {
 				confirmLoading={isEditLoading}
 				okText='Edit'
 			>
-				<Space direction='vertical'>
+				<Space direction='vertical' style={{ width: '100%' }}>
 					<Input.TextArea
 						rows={4}
 						value={taskText}
-						style={{ width: '400px' }}
 						onChange={onTextInputChange}
 					/>
 					<Checkbox

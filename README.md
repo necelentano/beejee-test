@@ -8,7 +8,7 @@
 
 - Впервые поробовал на практике Redux Toolkit (и RTK Query);
 - Продолжил осваивать UI библиотеку Ant Design;
-- **Нет мобильной верстки.**
+- Есть сносная адаптация под мобильные устройства.
 
 # [Heroku Live Demo](https://beejee-react-test-task.herokuapp.com/)
 
