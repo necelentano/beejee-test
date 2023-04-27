@@ -10,7 +10,7 @@
 - Продолжил осваивать UI библиотеку Ant Design;
 - Есть сносная адаптация под мобильные устройства.
 
-# [Heroku Live Demo](https://beejee-react-test-task.herokuapp.com/)
+# [Live Demo](https://beejee-test.onrender.com/)
 
 ---
 
